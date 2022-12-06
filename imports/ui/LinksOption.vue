@@ -4,14 +4,16 @@ import { LinksCollection } from '/imports/api/links'
 
 export default defineComponent({
   meteor: {
-    $subscribe: {
-      links: [],
-    },
-
+    // $subscribe: {
+    //   links: [],
+    // },
     links () {
       return LinksCollection.find({}).fetch()
     },
   },
+  mounted() {
+    this.$subscribe('links')
+  }
 })
 </script>
 
@@ -29,6 +31,8 @@ export default defineComponent({
       </li>
     </ul>
     <pre class="bg-gray-100 rounded p-4">{{ { $subReady } }}</pre>
+    <p v-if="$subReady.links">$subReady.links is true</p>
+    <p v-if="!$subReady.links">$subReady.links is false</p>
   </div>
 </template>
 
