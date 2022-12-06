@@ -8,6 +8,10 @@ export default defineConfig({
     vue(),
   ],
 
+  optimizeDeps: {
+    exclude: ["vue-meteor-tracker"],
+  },
+
   meteor: {
     clientEntry: 'imports/ui/main.ts',
   },
