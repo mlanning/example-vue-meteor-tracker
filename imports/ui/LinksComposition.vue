@@ -70,6 +70,7 @@ async function insertLink () {
       </li>
     </ul>
   </div>
+  <pre class="bg-gray-100 rounded p-4">{{ { $subReady } }}</pre>
 </template>
 
 <style scoped>
