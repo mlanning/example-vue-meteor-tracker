@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { subscribe, autorun, useMethod } from './v-meteor'
+import { subscribe, autorun, useMethod } from 'vue-meteor-tracker'
 import { LinksCollection } from '/imports/api/links'
 
 // Subscription
